@@ -35,7 +35,6 @@ CREATE TABLE `orderdetail` (
 `id` int(11) not null AUTO_INCREMENT,
 `orders_id` int(11) not null comment '订单id',
 `items_id` int(11) not null comment '商品id',
-`user_id` int(11) not null comment '用户id',
 `items_num` int (11) DEFAULT null comment '商品购买量',
 PRIMARY key (`id`),
 CONSTRAINT `FK_orderdetail_1` FOREIGN KEY (`orders_id`) REFERENCES `orders` (`id`) on DELETE no action on UPDATE no action,
