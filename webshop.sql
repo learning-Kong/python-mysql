@@ -27,6 +27,7 @@ CREATE TABLE `orders` (
 `createtime` datetime not null COMMENT '创建订单时间',
 `note` VARCHAR(100) DEFAULT NULL COMMENT '备注',
 PRIMARY KEY (`id`),
+constraint `FK_orders_id` foreign key (`user_id`) REFERENCES `user` (`id`) on DELETE no action on UPDATE no action
 )ENGINE=INNODB auto_INCREMENT=6 default CHARSET=utf8;
 
 #订单详情表orderdetail创建语句
@@ -36,4 +37,6 @@ CREATE TABLE `orderdetail` (
 `items_id` int(11) not null comment '商品id',
 `items_num` int (11) DEFAULT null comment '商品购买量',
 PRIMARY key (`id`),
+CONSTRAINT `FK_orderdetail_1` FOREIGN KEY (`orders_id`) REFERENCES `orders` (`id`) on DELETE no action on UPDATE no action,
+CONSTRAINT `FK_orderdetail_2` FOREIGN KEY (`items_id`) REFERENCES `items` (`id`) on DELETE no action on UPDATE no action
 )ENGINE=INNODB default CHARSET=utf8;
