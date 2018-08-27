@@ -40,3 +40,26 @@ PRIMARY key (`id`),
 CONSTRAINT `FK_orderdetail_1` FOREIGN KEY (`orders_id`) REFERENCES `orders` (`id`) on DELETE no action on UPDATE no action,
 CONSTRAINT `FK_orderdetail_2` FOREIGN KEY (`items_id`) REFERENCES `items` (`id`) on DELETE no action on UPDATE no action
 )ENGINE=INNODB default CHARSET=utf8;
+
+
+#初始数据
+INSERT INTO `items` VALUES (1, '台式机', 3000.0, '该电脑质量非常好！！！！', NULL, '2015-2-3 13:22:53');
+INSERT INTO `items` VALUES (2, '笔记本', 6000.0, '笔记本性能好，质量好！！！！！', NULL, '2015-2-9 13:22:57');
+INSERT INTO `items` VALUES (3, '背包', 200.0, '名牌背包，容量大质量好！！！！', NULL, '2015-2-6 13:23:02');
+
+INSERT INTO `user` VALUES (1, '王五', '2016-1-5', '2', '天津');
+INSERT INTO `user` VALUES (10, '张三', '2014-7-10', '1', '北京市');
+INSERT INTO `user` VALUES (16, '张小明', '2016-2-9', '1', '浙江杭州');
+INSERT INTO `user` VALUES (22, '陈小明', '2016-9-25', '1', '福建厦门');
+INSERT INTO `user` VALUES (24, '张三丰', '2016-9-17', '1', '湖北武汉');
+INSERT INTO `user` VALUES (25, '陈小明', '2016-2-17', '1', '上海');
+INSERT INTO `user` VALUES (26, '王五', '2010-7-6', '2', '深圳');
+
+INSERT INTO `orders` VALUES (3, 1, '1000010', '2016-8-16 13:22:35', NULL);
+INSERT INTO `orders` VALUES (4, 1, '1000011', '2016-6-23 13:22:41', NULL);
+INSERT INTO `orders` VALUES (5, 10, '1000012', '2016-9-22 16:13:23', NULL);
+
+INSERT INTO `orderdetail` VALUES (1, 3, 1, 1);
+INSERT INTO `orderdetail` VALUES (2, 3, 2, 3);
+INSERT INTO `orderdetail` VALUES (3, 4, 3, 4);
+INSERT INTO `orderdetail` VALUES (4, 4, 2, 3);
